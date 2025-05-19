@@ -1,0 +1,25 @@
+
+nav.pos {                                      /* навігац анімац */ 
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+    background-color: #27323a;
+}
+
+nav.pos img {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;              /* анімац */ 
+}
+
+nav.pos img:hover {
+    transform: scale(1.1);
+}
+.pos {
+      display: flex;
+      justify-content: center;                  /*центруаея*/
+      align-items: center;
+      background: url('media/фон_2.jpg') no-repeat center center/cover;  
+  }

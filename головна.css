@@ -1,0 +1,591 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  
+body, html {                               /* тонкий шрифт */       
+    height: 100%;
+    width: 100%;
+    font-family: system-ui;
+    font-weight: 300;  
+}
+header {
+    background: url('media/back.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: #b8d9f0;                      /* баннер */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    padding: 0 80px;
+    position: relative; 
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;                         /* тонкий шрифт + верх*/
+    font-size: 64px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #b8d9f0;
+}
+header p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 24px;                          /* шрифт для нижн*/
+    line-height: 1.5;
+}
+nav.pos {
+    display: flex;
+    flex-direction: column; /* Зміна на вертикальний напрямок */
+    gap: 20px;
+    position: fixed; /* Закріплюємо навігацію */
+    right: 20px;  
+    top: 120px;  
+    padding: 10px;
+    background-color: rgba(29, 38, 47, 0.538); 
+    border-radius: 10px;  
+    z-index: 1000;  
+    width: 60px; /* Фіксована ширина для вертикальної панелі */
+}
+nav.pos img {
+    width: 40px; 
+    height: auto;
+    transition: transform 0.3s ease;           /* анітація */
+    opacity: 0.7; 
+}
+
+nav.pos img:hover {
+    transform: scale(1.1);
+    opacity: 1; 
+}
+
+section {                                     /* стилі для заголовк */
+    padding: 40px;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+section.surface {                             /* поверхня - убираем поля */
+    background-image: url('media/фон_1.jpg');
+    align-items: stretch;  
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+section.surface .card {                          /*шоб поверхня не приклеїлась*/
+    margin: 50px auto;
+    width: 80%; 
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+                                                /*стилі для заголовків блоків*/
+                                                .section-title {
+                                                    text-align: right;
+                                                    margin-right: 40px;  
+                                                    width: 100%;
+                                                }
+section.surface .section-title,
+section.mid-depth .section-title,
+section.twilight .section-title,
+section.deep-sea .section-title {
+    text-align: right;
+}
+                                                        /*СРЕДНЯЯ ГЛУБИНА*/
+                                            
+section.mid-depth .video-row {              /*видео в 1 лин*/
+    display: flex;
+    justify-content: center;
+    gap: 70px; 
+    margin-bottom: 20px;
+}
+section.mid-depth .text-row {                 /* контейнер для тексту */
+    display: flex;
+    justify-content: center;
+    gap: 70px;  
+    margin: 0 auto;
+    width: 100%;  
+    font-size: 16px;  
+}
+section.mid-depth .text-block {              /* окремий блок для тексту під кожним відео */
+    background: rgba(0, 0, 0, 0.3); 
+    padding: 20px;
+    border-radius: 10px;
+    width: 1700px; 
+    box-sizing: border-box;
+}
+section.mid-depth .text-block p {            /* текст по лівому краю */
+    text-align: left;
+    margin: 0;
+}
+section.mid-depth .text-block strong {       /* автор по центру з більшим шрифтом */
+    display: block;
+    text-align: center;
+    margin-top: 5px;  
+    font-weight: 400;
+    font-size: 17px;  
+}
+
+section.mid-depth iframe,                       /* розмір відео*/
+section.mid-depth video {
+    margin: 0;
+    width: 400px;  
+    height: 225px;
+    display: block;
+}
+                                                             /* СУМЕРКИ*/
+section.twilight .card-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+                                                    /*3 та 1 одного розміру*/
+section.twilight .card-row .card:nth-child(1),
+section.twilight .card-row .card:nth-child(3) {
+    max-width: 300px;
+}
+section.twilight .card-row .card:nth-child(2) {               /*центр*/
+    max-width: 400px;  
+}
+
+section.twilight .card {                    
+    border-radius: 10px;  
+}
+
+section.mid-depth {
+    background-image: url('media/фон_2.jpg');
+}
+
+section.twilight {
+    background-image: url('media/фон_3.jpg');
+}
+
+section.deep-sea {
+    background-image: url('media/фон_4.jpg');
+    min-height: auto; 
+    height: auto;  
+    padding: 10px;
+}
+
+h2 {                                                    /* заголовки секцій*/
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: #b8d9f0;
+    font-size: 32px;
+    margin: 10px 0 20px;  
+   
+    border-bottom: 2px solid #9bcaec;
+    background: transparent;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+                                                    /*стилі блоків*/
+.card {
+    background: rgba(0, 0, 0, 0.3); 
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+.card h3 {                                          /*заголовки блоків*/
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #9bcaec;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.card p {
+    text-align: left;
+    font-size: 18px;
+    margin-top: 22px;
+}
+
+.card img {                                     /* КАРТИНКИ ПОВЕРХНОСТЬ*/  
+    width: 310px;  
+    height: 210px;  
+    border-radius: 8px;
+    margin: 10px 50px;  
+    display: inline-block;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+.card img:hover {
+    transform: scale(1.03);
+}
+
+section.twilight .card img {                            /*зменшені по висоті у сутінках*/
+    max-width: 200px;
+    max-height: 140px;  
+    margin: 1px 10px 15px 10px;
+}
+
+ul {                                                    /*стиль для списку сер глиб*/
+    list-style-type: none;
+    padding-left: 0;
+    background: transparent;
+    color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section.deep-sea .image-row {                               /*2 в ряд глибоководні*/
+    display: flex;
+    justify-content: center;
+    gap: 70px; 
+    margin-bottom: 10px;  
+    width: 100%;
+}
+
+section.deep-sea .image-row img {                           /* обрізка картинрк*/
+    max-width: 400px;  
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+section.deep-sea .image-row img:hover {
+    transform: scale(1.03);
+}
+
+section.deep-sea .text-row {                                /*текст блок розміщ*/
+    display: flex;
+    justify-content: center;
+    gap: 70px;  
+    margin-bottom: 90px;
+    width: 100%;
+}
+
+section.deep-sea .text-row .text-block {                   /* блоки 1-2 */
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 15px; 
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: center;
+    max-width: 400px; 
+}
+
+section.deep-sea .text-block h3 {                           /* заголовки у текстових блоках */
+    font-family: 'Montserrat';
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 20px; 
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8d9f0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    width: 100%;
+}
+
+section.deep-sea .text-block p {
+    text-align: left;                       /*лівий край глибоководний блок*/ 
+    font-size: 17px;  
+    margin-top: 10px; 
+}
+
+section.deep-sea .image-text-row { /* контейнер для кальмара */
+    display: flex;
+    flex-direction: column; /* Вертикальне розміщення: зображення зверху, текст знизу */
+    align-items: center;
+    gap: 30px;  
+    width: 100%;
+    max-width: 800px;  
+    margin: 0 auto; 
+    margin-bottom: 100px;
+}
+
+section.deep-sea .image-text-row .image-container { /* Новий контейнер для двох кальмары */
+    display: flex;
+    justify-content: center;
+    gap: 70px;  
+}
+
+section.deep-sea .image-text-row img { /* зображення кальмар */
+    width: 400px;  
+    height: 225px;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+section.deep-sea .image-text-row img:hover {
+    transform: scale(1.03);
+}
+
+section.deep-sea .image-text-row .text-block { /* текст блок кальмар */
+    background: rgba(0, 0, 0, 0.5);  
+    padding: 15px; 
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: center;
+    width: 110%;  
+}
+
+section.deep-sea .image-text-row .text-block p {     /*по лев краю кальмар*/
+    text-align: left; 
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+/* Нижня навігація (нова) */
+nav.bottom-nav {
+    display: grid;
+    grid-template-columns: repeat(4, auto); /* 4 іконки в ряд */
+    gap: 20px; /* Відстань між іконками */
+    justify-content: center; /* Центрування іконок */
+    padding: 15px;
+    background-color: #27323a;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Повна ширина */
+    z-index: 1000; /* Щоб навігація була поверх інших елементів */
+}
+
+nav.bottom-nav img {
+    width: 50px; /* Розмір іконок */
+    height: auto;
+    transition: transform 0.3s ease; /* Анімація при наведенні */
+    opacity: 0.7; /* Така ж прозорість, як у бічній навігації */
+}
+
+nav.bottom-nav img:hover {
+    transform: scale(1.1); /* Збільшення при наведенні */
+    opacity: 1; /* Повна видимість при наведенні */
+}
+
+/* Стили для футера */
+footer {
+    background-color: #27323a;
+    color: #b8d9f0;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.5;
+}
+footer p {
+    margin: 5px 0;
+}/* Секція тесту */
+section.test-section {
+    background-image: url('media/фон_4.jpg'); /* Використовуємо той самий фон, що й у deep-sea */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+section.test-section .card {
+    background: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон, як у інших секціях */
+    padding: 30px;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: center;
+    width: 80%;
+    max-width: 900px; /* Обмежуємо ширину для зручності */
+}
+
+section.test-section .section-title {
+    text-align: right;
+    margin-right: 40px; /* Відступ справа, як у попередніх секціях */
+}
+
+section.test-section form {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+section.test-section form ol li {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+section.test-section form input[type="radio"] {
+    margin-right: 10px;
+}
+
+section.test-section form textarea {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid #b8d9f0;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+section.test-section form input[type="button"],
+section.test-section form input[type="reset"] {
+    background: #b8d9f0;
+    color: #27323a;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+section.test-section form[name="poll"] {
+    margin-bottom: 20px;
+}
+
+section.test-section form[name="poll"] p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #ffffff !important;
+}
+
+section.test-section form[name="poll"] input[type="text"] {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff !important;
+    border: 1px solid #b8d9f0;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding: 5px;
+    display: block;
+}
+
+section.test-section form[name="poll"] input[type="radio"] {
+    margin-right: 10px;
+}
+
+section.test-section form[name="poll"] div {
+    text-align: left; /* Вирівнювання по лівому краю для блоку з радіокнопками */
+}
+
+section.test-section form[name="poll"] input[type="button"],
+section.test-section form[name="poll"] input[type="reset"] {
+    background: #b8d9f0;
+    color: #27323a;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-right: 10px;
+}
+
+section.test-section form[name="poll"] input[type="button"]:hover,
+section.test-section form[name="poll"] input[type="reset"]:hover {
+    background: #9bcaec;
+}
+
+section.test-section #pollResult {
+    color: #b8d9f0 !important;
+    font-size: 16px;
+    text-align: center;
+    min-height: 20px; /* Забезпечуємо місце для тексту */
+}
+
+
+/* Секція калькулятора */
+section.ticket-calculator {
+    background-image: url('media/фон_4.jpg'); /* Використовуємо той самий фон, що й у deep-sea */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+section.ticket-calculator .section-title {
+    text-align: right;
+    margin-right: 40px; /* Відступ справа, як у інших секціях */
+    width: 100%;
+}
+
+section.ticket-calculator .card {
+    background: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон, як у інших секціях */
+    padding: 30px;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: center;
+    width: 80%;
+    max-width: 900px; /* Обмежуємо ширину для зручності */
+    transition: transform 0.8s ease; /* Анімація при наведенні */
+}
+
+section.ticket-calculator form {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: left; /* текст по лівому краю */
+}
+
+section.ticket-calculator form p {         /*кількість охочих в вал*/
+    font-size: 20px;
+    color: #b8d9f0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+section.ticket-calculator form label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+section.ticket-calculator form input[type="number"] {
+    background: rgba(255, 255, 255, 0.1); /* Напівпрозоре поле введення */
+    color: #ffffff;
+    border: 1px solid #b8d9f0;
+    border-radius: 5px;
+    padding: 5px;
+    width: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    transition: border-color 0.3s ease;
+}
+
+section.ticket-calculator form input[type="button"]:hover,
+section.ticket-calculator form input[type="reset"]:hover {
+    background: #9bcaec; /* Зміна кольору при наведенні */
+    transform: scale(1.05); /* Легке збільшення при наведенні */
+}
+
+section.ticket-calculator form input[type="button"]:active,
+section.ticket-calculator form input[type="reset"]:active {
+    transform: scale(0.95); /* Ефект натискання */
+}
+
+section.ticket-calculator #ticketResult {
+    color: #b8d9f0;
+    font-size: 16px;
+    text-align: left; /* Вирівнювання результату по лівому краю */
+    min-height: 100px; /* Забезпечуємо місце для тексту */
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05); /* Легкий фон для результату */
+    border-radius: 5px;
+}
